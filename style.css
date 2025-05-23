@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #020202;
+  color: #f5f5f5;
+  gap: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+aside {
+  width: 20vw;
+  height: 100vh;
+  background-color: #121212;
+  cursor: default;
+  overflow-y: scroll;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+}
+
+aside::-webkit-scrollbar {
+  height: 6px;
+}
+
+aside::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+  background: #555;
+  /* grey thumb */
+  border-radius: 4px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+  background: #777;
+  /* lighter grey on hover */
+}
+
+/* Firefox scrollbar */
+aside {
+  scrollbar-color: #555 transparent;
+  scrollbar-width: thin;
+}
+
+main {
+  cursor: default;
+  width: 80vw;
+  height: 100vh;
+  background-color: #121212;
+}
+
+.asideText {
+  margin: 10px;
+}
+
+.songList-aside ul {
+  list-style-type: decimal;
+  padding: 0 20px;
+  margin: 10px 0px;
+  font-family: Poppins;
+  width: 100%;
+  height: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.songList-aside ul li .songultitle {
+  height: 20px;
+  margin: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.songList-aside ul li {
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+  transition: all 0.2s ease-in-out;
+}
+
+.songList-asideUl span {
+  text-align: left;
+}
+
+.playing {
+  background: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.songList-aside ul li:hover {
+  background-color: #5e5e5e21;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header {
+  width: 100%;
+  height: calc(100% / 10);
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins;
+  font-weight: 300;
+  background-color: #0c0c0c;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px #000000;
+}
+
+.main-area {
+  width: 100%;
+  height: calc(100% / 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cardContainer-main {
+  height: 100%;
+  width: 100%;
+}
+
+.card-main {
+  width: 250px;
+  height: max-content;
+  margin: 10px;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 10px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.playlistImg {
+  position: relative;
+}
+
+.playlistImg img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card-main:hover {
+  background-color: #5e5e5e21;
+}
+
+.card-main p {
+  margin: 100px;
+}
+
+.playlist-playbtn {
+  position: absolute;
+  top: 85%;
+  left: 75%;
+  background-color: #1ed760;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.card-main:hover .playlist-playbtn {
+  opacity: 1;
+}
+
+.music-player {
+  position: relative;
+  width: 100%;
+  height: calc(100% / 8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 20px;
+  background-color: #020202d5;
+  flex-direction: column;
+}
+
+.main-area>h2,
+.asideText {
+  font-family: Poppins;
+  font-weight: 600;
+  display: flex;
+  margin-top: 15px;
+}
+
+.cardContainer-main {
+  height: clamp(calc(100% / 0.2), calc(100% / 0.2), calc(100% / 0.2));
+  width: clamp(100%, 100%, 100%);
+}
+
+.musicbtns {
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.seek-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  appearance: none;
+  height: 3px;
+  background: #333;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.seek-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.seek-bar:hover::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+}
+
+.seek-bar:hover {
+  height: 5px;
+}
+
+.music-time {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 5px;
+}
+
+.notification-bar {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  background-color: #1ed760;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.musicinfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.songnamediv {
+  position: fixed;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% / 6);
+}
+
+.songname {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px;
+}
+
+.musicbtns svg {
+  transition: all 0.3s ease-in-out;
+  fill: #909090;
+}
+
+.asidehead img {
+  display: none;
+}
+
+.songnamebar {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .cardContainer-main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .card-main {
+    padding: 0;
+    margin: 0;
+  }
+
+  .songnamebar {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 1000px) {
+  aside {
+    display: flex;
+    width: 100vw;
+    position: fixed;
+    z-index: 1000;
+    background-color: #121212f3;
+  }
+
+  main {
+    width: 100vw;
+  }
+
+  .seek-bar:active::-webkit-slider-thumb {
+    height: 15px;
+    width: 15px;
+  }
+
+  .seek-bar:active {
+    height: 5px;
+  }
+
+  .songList-aside ul li {
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .songList-aside ul li:hover {
+    cursor: pointer;
+  }
+
+  .asidehead:first-child {
+    position: relative;
+  }
+
+  .asidehead img {
+    display: block;
+    position: absolute;
+    z-index: 1000000;
+    left: 87%;
+    top: 12%;
+    width: 30px;
+    height: 30px;
+    margin: 10px 2px; 
+  }
+
+  .card-main {
+    padding: 0;
+    margin: 25px;
+  }
+
+  .songList-asideUl li {
+    text-align: right;
+  }
+
+  .songnamediv {
+    display: none;
+  }
+
+  .songnamebar {
+    display: none;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    margin-top: 25px;
+    margin: 20px;
+    height: 25px;
+    width: 90vw;
+    background-color: #00000094;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: larger;
+    font-size: Poppins;
+    border-radius: 10px;
+  }
+}

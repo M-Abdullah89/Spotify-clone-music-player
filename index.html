@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotofy | Online Music player</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="utility.css" />
+  <link rel="shortcut icon" href="favicon32.b64ecc03.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="flex">
+  <div class="notification-bar">
+    <p class="notification Poppins bold"></p>
+  </div>
+  <aside>
+    <div class="asidehead">
+      <h2 class="Poppins asideText flex jcc alic bold">Your Library</h2>
+      <img src="/SVG's/close.svg" class="closebtn" alt="" />
+    </div>
+
+    <div class="songList-aside">
+      <ul class="songList-asideUl"></ul>
+    </div>
+  </aside>
+  <main class="flex fd-col">
+  
+    <section class="header">
+      <h4 class="flex jcc alic Poppins light">
+        Visit my Github to add more songs
+      </h4>
+        <div class="songnamebar">
+      <p class="songname Poppins"></p>
+    </div>
+    </section>
+    <section class="main-area">
+      <h2>Your Playlists</h2>
+      <div class="cardContainer-main flex">
+        <div class="card-main">
+          <div class="playlistImg">
+            <img class="flex jcc alic" src="/Playlists Images/Playlist1.jpg" alt="" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="playlist-playbtn" viewBox="0 0 24 24" width="50" height="50"
+              color="#000000" fill="#000000">
+              <path
+                d="M15.9453 12.3948C15.7686 13.0215 14.9333 13.4644 13.2629 14.3502C11.648 15.2064 10.8406 15.6346 10.1899 15.4625C9.9209 15.3913 9.6758 15.2562 9.47812 15.0701C9 14.6198 9 13.7465 9 12C9 10.2535 9 9.38018 9.47812 8.92995C9.6758 8.74381 9.9209 8.60868 10.1899 8.53753C10.8406 8.36544 11.648 8.79357 13.2629 9.64983C14.9333 10.5356 15.7686 10.9785 15.9453 11.6052C16.0182 11.8639 16.0182 12.1361 15.9453 12.3948Z"
+                stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h4 class="playlistName Poppins bold">Your Playlists</h4>
+          <div class="playlistDescription Poppins light">
+            Playlist consist of music that you like
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="music-player">
+      <input type="range" id="seek-bar" class="seek-bar" value="0" min="0" step="0.1" />
+      <div class="musicinfo">
+        <div class="songnamediv df alic fd-row p-5 dn">
+        </div>
+        <div class="musicbtns">
+          <div class="music-Time">--:--/--:--</div>
+          <img src="/SVG's/previous.svg" alt="previous song" class="prev" />
+          <img src="/SVG's/play.svg" alt="Play/Pause" class="player" />
+          <img src="/SVG's/next.svg" alt="Next Song" class="next" />
+          <svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="loop" aria-hidden="true"
+            style="display: block; width: 30px; height: 30px">
+            <path
+              d="M21,13h1v5L3.93,18.03l2.62,2.62l-0.71,0.71L1.99,17.5l3.85-3.85l0.71,0.71l-2.67,2.67L21,17V13z M3,7l17.12-0.03 l-2.67,2.67l0.71,0.71l3.85-3.85l-3.85-3.85l-0.71,0.71l2.62,2.62L2,6v5h1V7z"
+              class="style-scope tp-yt-iron-icon"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
