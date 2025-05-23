@@ -3,9 +3,9 @@
 .flex{
     display: flex;
 }
-/* .br{
+.br{
     border:2px solid red;
-} */
+}
 .Poppins{
     font-family: 'Poppins';
 }
