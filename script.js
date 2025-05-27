@@ -16,7 +16,8 @@ let aside = document.querySelector("aside");
 let songnamep = document.querySelector(".songname");
 let songnamediv = document.querySelector('.songnamediv');
 let currfolder;
- 
+let cardContainer = document.querySelectorAll(".cardContainer");
+
 async function getSongs(folder) {
   currfolder = folder;
   let response = await fetch(`http://127.0.0.1:3000/Songs/${folder}`);
@@ -256,21 +257,28 @@ async function main() {
     songnameli.style.display = "flex";
   } else {
     aside.style.display = "none";
+    aside.classList.add("dn");
+    songnameli.classList.add("dn");
     songnameli.style.display = "none";  
   }
 
-  if (window.innerWidth < 1000) {
+  if (window.innerWidth <= 1000) {
     cards_main.forEach((card) => {
       card.addEventListener("click", () => {
-        aside.classList.toggle("dn");
+        aside.style.display = "flex";
+        aside.classList.remove("dn");
+        songnameli.classList.remove("dn");
+        songnameli.style.display = "flex";
       });
     });
-    cards_main.forEach((card) => {
-      card.addEventListener("click", () => {
-        songnameli.classList.remove("dn");
-      });
+    closebtn.addEventListener("click", () => {
+      aside.style.display = "none";
+      aside.classList.add("dn");
+      songnameli.classList.add("dn");
+      songnameli.style.display = "none";
     });
   }
+  
   audio.addEventListener("play", () => {
     songnamep.innerHTML = songs[currentIndex]
       .split(`/Songs/${currfolder}/`)[1]
@@ -280,9 +288,6 @@ async function main() {
     
   audio.addEventListener("ended", () => {
     nextSong();
-  });
-    closebtn.addEventListener("click", () => {
-    aside.classList.toggle("dn");
   });
 }
 
