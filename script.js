@@ -16,7 +16,7 @@ let aside = document.querySelector("aside");
 let songnamep = document.querySelector(".songname");
 let songnamediv = document.querySelector('.songnamediv');
 let currfolder;
-let cardContainer = document.querySelectorAll(".cardContainer");
+
 
 async function getSongs(folder) {
   currfolder = folder;
