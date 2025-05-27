@@ -258,9 +258,7 @@ async function main() {
     aside.style.display = "none";
     songnameli.style.display = "none";  
   }
-  closebtn.addEventListener("click", () => {
-    aside.classList.toggle("dn");
-  });
+
   if (window.innerWidth < 1000) {
     cards_main.forEach((card) => {
       card.addEventListener("click", () => {
@@ -282,6 +280,9 @@ async function main() {
     
   audio.addEventListener("ended", () => {
     nextSong();
+  });
+    closebtn.addEventListener("click", () => {
+    aside.classList.toggle("dn");
   });
 }
 
