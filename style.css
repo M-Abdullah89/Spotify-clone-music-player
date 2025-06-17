@@ -315,11 +315,15 @@ main {
   .songnamebar {
     width: 100vw;
   }
+
+  aside {
+    display: none;
+  }
 }
 
 @media (max-width: 1000px) {
   aside {
-    display: flex;
+    display: none;
     width: 100vw;
     position: fixed;
     z-index: 1000;
@@ -360,7 +364,7 @@ main {
     top: 12%;
     width: 30px;
     height: 30px;
-    margin: 10px 2px; 
+    margin: 10px 2px;
   }
 
   .card-main {

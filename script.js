@@ -36,7 +36,7 @@ async function getSongs(folder) {
 }
 
 async function main() {
-  let songs = await getSongs("Playlist2");
+  let songs = await getSongs("Playlist");
   console.log(songs);
   for (const song of songs) {
     songnameli2.innerHTML += `<li> <img src="SVG's/music.svg" alt=""><span class="songultitle">${song
