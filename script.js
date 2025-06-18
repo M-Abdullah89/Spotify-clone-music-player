@@ -153,6 +153,7 @@ async function main() {
       prevSong();
     }
   });
+  
 
   function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
